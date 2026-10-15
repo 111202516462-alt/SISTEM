@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -16,7 +15,7 @@
     <h1>ARPA UDINUS</h1>
     <div class="line"></div>
     <h3>SISTEM POIN</h3>
-    <p>5 MATCH BATTLE ROYALE</p>
+    <p>6 MATCH BATTLE ROYALE</p>
   </div>
 
   <div class="hero-logos">
@@ -64,7 +63,7 @@
 <section>
   <div class="section-title">
     <span>MATCH FORMAT</span>
-    <h2>5 Match</h2>
+    <h2>6 Match</h2>
   </div>
   <div class="match-format">
     <div>MATCH <b>01</b></div>
@@ -72,7 +71,8 @@
     <div>MATCH <b>03</b></div>
     <div>MATCH <b>04</b></div>
     <div>MATCH <b>05</b></div>
-    <div class="format-total">TOTAL <b>5 MATCH</b></div>
+    <div>MATCH <b>06</b></div>
+    <div class="format-total">TOTAL <b>6 MATCH</b></div>
   </div>
 </section>
 
@@ -100,7 +100,8 @@
       <button class="tab" data-tab="match3">MATCH 3</button>
       <button class="tab" data-tab="match4">MATCH 4</button>
       <button class="tab" data-tab="match5">MATCH 5</button>
-      <button class="tab" data-tab="total">TOTAL 5 MATCH</button>
+      <button class="tab" data-tab="match6">MATCH 6</button>
+      <button class="tab" data-tab="total">TOTAL 6 MATCH</button>
     </nav>
 
     <div class="match-panel active" id="match1">
@@ -148,11 +149,32 @@
       </div>
     </div>
 
+    <div class="match-panel" id="match6">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>NO</th><th>TEAM</th><th>PLACEMENT</th><th>KILL</th><th>PLACEMENT POINT</th><th>KILL POINT</th><th>TOTAL</th><th></th></tr></thead>
+          <tbody id="match6Body"></tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="match-panel" id="total">
       <div class="table-wrap">
         <table class="total-table">
           <thead>
-            <tr><th>RANK</th><th>TEAM</th><th>MATCH 1</th><th>MATCH 2</th><th>MATCH 3</th><th>MATCH 4</th><th>MATCH 5</th><th>PLACEMENT</th><th>KILL POINT</th><th>TOTAL POINT</th></tr>
+            <tr>
+              <th>RANK</th>
+              <th>TEAM</th>
+              <th>MATCH 1</th>
+              <th>MATCH 2</th>
+              <th>MATCH 3</th>
+              <th>MATCH 4</th>
+              <th>MATCH 5</th>
+              <th>MATCH 6</th>
+              <th>PLACEMENT</th>
+              <th>KILL POINT</th>
+              <th>TOTAL POINT</th>
+            </tr>
           </thead>
           <tbody id="totalBody"></tbody>
         </table>
@@ -174,7 +196,7 @@
   <div class="leaderboard">
     <div class="leaderboard-header">
       <b>FINAL LEADERBOARD</b>
-      <b>5 MATCH</b>
+      <b>6 MATCH</b>
     </div>
     <div id="leaderboardBody">
       <div class="empty">Klik CALCULATE POINT untuk melihat ranking.</div>
@@ -185,7 +207,7 @@
 
 <footer>
   <strong>ARPA UDINUS</strong>
-  FREE FIRE POINT CALCULATOR · 5 MATCH
+  FREE FIRE POINT CALCULATOR · 6 MATCH
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>

@@ -1,4 +1,3 @@
-
 const placementPoints = {
     1: 12,
     2: 9,
@@ -14,14 +13,14 @@ const placementPoints = {
     12: 0
 };
 
-const storageKey = "arpa_udinus_5_match";
+const storageKey = "arpa_udinus_6_match";
 
 let teams = [];
 let serverAvailable = false;
 let saveTimer;
 
-const matchBodies = [1, 2, 3, 4, 5].map(n =>
-    document.getElementById("match" + n + "Body")
+const matchBodies = Array.from({ length: 6 }, (_, i) =>
+    document.getElementById("match" + (i + 1) + "Body")
 );
 
 const totalBody = document.getElementById("totalBody");
@@ -41,7 +40,7 @@ function createTeam(name) {
     return {
         id: Date.now() + Math.random(),
         name,
-        matches: Array.from({ length: 5 }, () => ({
+        matches: Array.from({ length: 6 }, () => ({
             placement: 12,
             kills: 0
         }))
@@ -52,7 +51,7 @@ function normalizeTeams(data) {
     return data.map((team, index) => ({
         id: team.id || Date.now() + Math.random() + index,
         name: String(team.name || "TEAM " + (index + 1)),
-        matches: Array.from({ length: 5 }, (_, i) => ({
+        matches: Array.from({ length: 6 }, (_, i) => ({
             placement: Math.min(
                 12,
                 Math.max(1, Number(team.matches?.[i]?.placement) || 12)
@@ -446,6 +445,7 @@ document.getElementById("exportBtn")?.addEventListener("click", () => {
         "MATCH 3",
         "MATCH 4",
         "MATCH 5",
+        "MATCH 6",
         "TOTAL PLACEMENT POINT",
         "TOTAL KILL",
         "TOTAL POINT"
@@ -469,6 +469,7 @@ document.getElementById("exportBtn")?.addEventListener("click", () => {
     worksheet["!cols"] = [
         { wch: 8 },
         { wch: 24 },
+        { wch: 12 },
         { wch: 12 },
         { wch: 12 },
         { wch: 12 },
@@ -539,7 +540,7 @@ document.getElementById("exportBtn")?.addEventListener("click", () => {
                             : fillColor;
             }
 
-            if (rowIndex > 0 && colIndex === 9) {
+            if (rowIndex > 0 && colIndex === 10) {
                 fillColor = "D1FAE5";
                 fontColor = "065F46";
             }
@@ -551,7 +552,7 @@ document.getElementById("exportBtn")?.addEventListener("click", () => {
                     bold:
                         rowIndex === 0 ||
                         colIndex === 0 ||
-                        colIndex === 9,
+                        colIndex === 10,
                     color: { rgb: fontColor }
                 },
                 fill: {
@@ -581,7 +582,7 @@ document.getElementById("exportBtn")?.addEventListener("click", () => {
 
     XLSX.writeFile(
         workbook,
-        "arpa-udinus-5-match.xlsx"
+        "arpa-udinus-6-match.xlsx"
     );
 });
 
